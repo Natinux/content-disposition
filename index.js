@@ -77,7 +77,7 @@ var QUOTE_REGEXP = /([\\"])/g
  * OCTET         = <any 8-bit sequence of data>
  */
 
-var PARAM_REGEXP = /; *([!#$%&'\*\+\-\.0-9A-Z\^_`a-z\|~]+) *= *("(?:[ !\x23-\x5b\x5d-\x7e\x80-\xff]|\\[\x20-\x7e])*"|[!#$%&'\*\+\-\.0-9A-Z\^_`a-z\|~]+) */g
+var PARAM_REGEXP = /; *([!#$%&'\*\+\-\.0-9A-Z\^_`a-z\|~]+) *= *("(?:[ !\x23-\x5b\x5d-\x7e\x80-\xff]|\\[\x20-\x7e])*"|[!#$%&'()\*\+\-\.0-9A-Z\^_`a-z\|~]+) */g
 var TEXT_REGEXP = /^[\x20-\x7e\x80-\xff]+$/
 var TOKEN_REGEXP = /^[!#$%&'\*\+\-\.0-9A-Z\^_`a-z\|~]+$/
 
@@ -102,7 +102,7 @@ var TOKEN_REGEXP = /^[!#$%&'\*\+\-\.0-9A-Z\^_`a-z\|~]+$/
  *               / "^" / "_" / "`" / "|" / "~"
  */
 
-var EXT_VALUE_REGEXP = /^([A-Za-z0-9!#$%&+\-^_`{}~]+)'(?:[A-Za-z]{2,3}(?:-[A-Za-z]{3}){0,3}|[A-Za-z]{4,8}|)'((?:%[0-9A-Fa-f]{2}|[A-Za-z0-9!#$&+\-\.^_`|~])+)$/
+var EXT_VALUE_REGEXP = /^([A-Za-z0-9!#$%&+\-^_`{}~]+)'(?:[A-Za-z]{2,3}(?:-[A-Za-z]{3}){0,3}|[A-Za-z]{4,8}|)'((?:%[0-9A-Fa-f]{2}|[A-Za-z0-9!#$&+\-\.^_`|~()])+)$/
 
 /**
  * RegExp for various RFC 6266 grammar

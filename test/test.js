@@ -191,6 +191,13 @@ describe('contentDisposition.parse(string)', function () {
     assert.throws(contentDisposition.parse.bind(null, 42), /argument string.*required/)
   })
 
+  it('should parse string with brackets', function () {
+    assert.deepEqual(contentDisposition.parse('attachment; filename*=UTF-8\'\'Alpha-_Beta_(Gama).delta'), {
+      type: 'attachment',
+      parameters: { filename: 'Alpha-_Beta_(Gama).delta' }
+    })
+  })
+
   describe('with only type', function () {
     it('should reject quoted value', function () {
       assert.throws(contentDisposition.parse.bind(null, '"attachment"'),
